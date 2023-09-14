@@ -1,0 +1,25 @@
+Image reconstruction with 4 dimentional detection
+CAE, VAE with additional layer for deprediction, connecting to the latent (middle) layer.
+
+
+
+0. Put dataset in data directry with separate files.
+
+1. Data processing
+    - run data_processing.py
+    - change plenty of png data to npy file, which helps calculation cost smaller
+    - normalized [0, 255] -> [0.0, 1.0]
+
+2. train CAE, VAE
+    - run CAE(or VAE)_learning.py
+    - save best model, whose error is the smallest
+
+3. test CAE, VAE
+    - run CAE(or VAE)_test.py
+    - output reconstruction image data
+    - extract latent space value
+    - output prediction result
+
+4. PCA on latent space value
+    - use PCA.py
+    - output analysis with some graphs

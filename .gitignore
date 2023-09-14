@@ -1,0 +1,10 @@
+*.png
+*.jpg
+*.npy
+*.csv
+*.pyc
+*.log
+*.wandb
+*.pth
+*.DS_Stores
+scripts/result/*
