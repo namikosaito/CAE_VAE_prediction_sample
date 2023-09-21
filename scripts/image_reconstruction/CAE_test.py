@@ -66,7 +66,7 @@ def main():
     height, width, color_ch = dataset[0][0][0].shape
 
     ########## model setting ##########
-    torch_device = "cpu" # "cuda" or "cpu"
+    torch_device = "cuda" # "cuda" or "cpu"
 
     model = caemodel.CAE_mid(height, width, color_ch, cnn_ch0, cnn_ch1, cnn_ch2, cnn_ch3, h_dim0, h_dim1, h_dim2, output_dim).to(torch_device)
         
