@@ -46,11 +46,11 @@ class Dataset_1ims_train(torch.utils.data.Dataset):
             if i in use_seq_idx:
                 if first_flag:
                     self.concat = np.load(data_path + "/" + dirs[i] + "/image.npy")
-                    self.csv_concat = np.loadtxt(data_path + "/" + dirs[i] + "/image.csv", delimiter=",", dtype=float)
+                    self.csv_concat = np.loadtxt(data_path + "/" + dirs[i] + "/data.csv", delimiter=",", dtype=float)
                     first_flag = False
                 else:
                     self.concat = np.concatenate([self.concat, np.load(data_path + "/" + dirs[i] + "/image.npy")])
-                    self.csv_concat = np.concatenate([self.csv_concat, np.loadtxt(data_path + "/" + dirs[i] + "/image.csv", delimiter=",", dtype=float)])
+                    self.csv_concat = np.concatenate([self.csv_concat, np.loadtxt(data_path + "/" + dirs[i] + "/data.csv", delimiter=",", dtype=float)])
 
     def __len__(self):
         return self.concat.shape[0]
@@ -72,7 +72,7 @@ class Dataset_1ims_test(torch.utils.data.Dataset):
         self.csv_concat = []
         for dir in dirs:
             self.concat.append(np.load(data_path + "/" + dir + "/image.npy"))
-            self.csv_concat.append(np.loadtxt(data_path + "/" + dir+ "/image.csv", delimiter=",", dtype=float))
+            self.csv_concat.append(np.loadtxt(data_path + "/" + dir+ "/data.csv", delimiter=",", dtype=float))
 
     def __len__(self):
         return len(self.concat)

@@ -35,7 +35,7 @@ def main():
         1
     ]
 
-    n_epoch = 1000
+    n_epoch = 10000000
     save_frequency = 100
     batch_size = 10
     torch_device = "cuda" # "cuda" or "cpu"

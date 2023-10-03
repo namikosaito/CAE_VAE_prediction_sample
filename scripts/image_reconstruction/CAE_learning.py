@@ -25,24 +25,24 @@ def main():
     h_dim0 = 1024
     h_dim1 = 128
     h_dim2 = 15
-    output_dim = 4 # pos(x, y), shape, orientation
+    output_dim = 4 # pos(x, y), shape, orientation    ################################change!!!!
 
 
     train_sequence = [
-        0
+        0,
     ]
     test_sequence = [
-        1
+        0
     ]
 
     n_epoch = 1000
     save_frequency = 100
     batch_size = 10
-    torch_device = "cpu" # "cuda" or "cpu"
+    torch_device = "cuda" # "cuda" or "cpu"
     
     
     ########## Ground Truth Prediction ###########
-    GT_prediction = torch.randn(4) # only for initialization
+    GT_prediction = torch.randn(4) # only for initialization #change!! #this is dimension of data
     alpha = 1  # weight to multiple to 
     
     ########## Directory setting ##########

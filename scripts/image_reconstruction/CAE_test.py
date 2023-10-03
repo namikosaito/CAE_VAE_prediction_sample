@@ -17,7 +17,17 @@ from util import datautil
 
 def main():
     ########## file managemant ##########
-    file_name = "CAE_20230914_1618"
+    #file_name = "CAE_20230922_1847"
+    
+    # カレントディレクトリ内のファイル一覧を取得
+    files = os.listdir("../result/")
+    # ファイル一覧を最終更新日時でソート
+    files.sort(key=lambda x: os.path.getmtime(os.path.join("../result/", x)), reverse=True)
+    # 最新のファイルを選択
+    file_name = files[0]
+
+
+
     data_path = "../../data/sample_img_data"
     save_dir = "../result/" + file_name
 
